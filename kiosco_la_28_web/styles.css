@@ -1,0 +1,318 @@
+:root {
+  --green: #a8ff00;
+  --green-dark: #69a600;
+  --black: #080b08;
+  --charcoal: #111611;
+  --white: #ffffff;
+  --muted: #c8d0c8;
+  --border: rgba(168, 255, 0, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  background: var(--black);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px clamp(20px, 5vw, 70px);
+  background: rgba(5, 8, 5, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.brand img { width: 48px; height: 48px; object-fit: cover; border-radius: 50%; }
+
+.main-nav { display: flex; gap: 28px; }
+.main-nav a { color: #e8eee8; font-weight: 600; }
+.main-nav a:hover { color: var(--green); }
+
+.menu-button {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 28px;
+}
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 120px 24px 70px;
+  background: url("assets/fachada.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.78) 48%, rgba(0,0,0,.35) 100%),
+    linear-gradient(0deg, rgba(8,11,8,.85), transparent 45%);
+}
+
+.hero-content {
+  position: relative;
+  width: min(1180px, 100%);
+}
+
+.hero-logo { width: 150px; border-radius: 50%; filter: drop-shadow(0 0 24px rgba(168,255,0,.45)); }
+
+.eyebrow {
+  color: var(--green);
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  font-size: .82rem;
+}
+
+h1, h2, h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 800px;
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  margin-bottom: 20px;
+}
+
+h1 span, h2 span { color: var(--green); }
+
+.hero-text {
+  max-width: 680px;
+  color: #edf2ed;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.hero-actions, .location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 10px;
+  font-weight: 800;
+  transition: .2s ease;
+}
+
+.button:hover { transform: translateY(-2px); }
+
+.primary {
+  color: #0a0d09;
+  background: var(--green);
+  box-shadow: 0 0 25px rgba(168,255,0,.28);
+}
+
+.secondary { border: 1px solid rgba(255,255,255,.5); background: rgba(0,0,0,.35); }
+
+.hero-info {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  padding: 12px 18px;
+  border-left: 4px solid var(--green);
+  background: rgba(0,0,0,.48);
+}
+
+.hero-info strong { color: var(--green); font-size: 1.3rem; }
+
+.section {
+  padding: 90px clamp(20px, 5vw, 70px);
+  background: #f4f6f2;
+  color: #111;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.section h2 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 16px; }
+
+.category-grid {
+  width: min(1250px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 16px 45px rgba(0,0,0,.1);
+}
+
+.category-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+.category-card div { padding: 20px; }
+
+.category-card h3 {
+  color: #101510;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+.category-card p { color: #566056; margin: 0; font-size: .95rem; }
+
+.dark-section {
+  color: white;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(168,255,0,.08), transparent 25%),
+    var(--charcoal);
+}
+
+.split-layout {
+  width: min(1200px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.split-layout img {
+  border-radius: 22px;
+  box-shadow: 0 0 0 1px var(--border), 0 20px 60px rgba(0,0,0,.35);
+}
+
+.benefit-list { padding-left: 20px; }
+.benefit-list li { margin-bottom: 13px; }
+.benefit-list li::marker { color: var(--green); }
+
+.gallery {
+  width: min(1180px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.location-section {
+  color: white;
+  background:
+    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+    url("assets/fachada.jpg") center/cover no-repeat;
+}
+
+.location-card {
+  width: min(760px, 100%);
+  margin: auto;
+  padding: clamp(26px, 5vw, 55px);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(8,11,8,.86);
+  backdrop-filter: blur(10px);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 900;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #071006;
+  background: var(--green);
+  font-weight: 900;
+  box-shadow: 0 0 30px rgba(168,255,0,.42);
+}
+
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: #b9c3b9;
+  background: #050705;
+}
+
+footer img { width: 82px; border-radius: 50%; margin: 0 auto 15px; }
+footer p { margin: 5px 0; }
+.credit { color: var(--green); }
+
+@media (max-width: 1050px) {
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .menu-button { display: block; }
+
+  .main-nav {
+    position: absolute;
+    top: 73px;
+    right: 20px;
+    display: none;
+    flex-direction: column;
+    width: min(280px, calc(100vw - 40px));
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #090d09;
+  }
+
+  .main-nav.open { display: flex; }
+
+  .hero { background-position: 63% center; }
+  .hero-overlay { background: rgba(0,0,0,.76); }
+  .hero-logo { width: 115px; }
+  .hero-actions .button { width: 100%; }
+
+  .category-grid,
+  .split-layout,
+  .gallery { grid-template-columns: 1fr; }
+
+  .gallery img { height: 320px; }
+}
+
+@media (max-width: 520px) {
+  .brand span { display: none; }
+  .category-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 3.2rem; }
+}
